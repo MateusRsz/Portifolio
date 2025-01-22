@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body, html {
+    width: 100vw;
+    height: 1300vh;
+}
+header {
+    z-index: 2;
+    position: fixed;
+    background-color: black;
+    color: white;
+    width: 100vw;
+    height: 60px;
+}
+#atalhos{
+    position: absolute;
+    right: 0px;
+    height: 100vh;
+    width: 120px;
+    background-color: cadetblue;
+   
+}
+#atalhos > img{
+    z-index: 3;
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: 10px;
+    transform: translateX(13%);
+}
+
+#atalhos > ul{
+    transform: translate(0px, 150px);
+}
+
+footer {
+    position: fixed;
+    background-color: gray;
+    width: 100vw;
+    height: 200px;
+    box-shadow: inset -4px 0px 7px 0px #000000a3;
+    color: rgb(85, 84, 84);
+    text-shadow: 1px 1px  rgba(0, 0, 0, 0.123);
+    bottom: 0px;
+
+}
