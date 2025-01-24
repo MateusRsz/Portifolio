@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+#display{
+    width: 50vw;
+    text-align: center;
+    background-color: cadetblue;
+    margin: auto;
+}
+ #btns {
+    padding: auto;
+ }
+.btn_rs{
+    border: none;
+    padding: 5px 20px 5px 20px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.274);
+    margin: 5px;
+}
+
+.btn_rs:hover{
+    background-color: rgb(158, 158, 158);
+}
