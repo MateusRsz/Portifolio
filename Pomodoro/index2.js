@@ -1,27 +1,25 @@
- 
+
 let displai = document.querySelector('#display')
 var minute = 0
 var second = 0
 displai.textContent = `${minute}:${second}`
 
-let pomodoro = {
-
-    get moreMinute() {
+class pomodoro {
+    static propriedade = null
+    static moreMinute() {
         minute++
         displai.textContent = `${minute}:${second}`
-    },
-    get lessMinute() {
+    }
+    static lessMinute() {
         minute--
         displai.textContent = `${minute}:${second}`
-    },
-
-
-    get start() {
-       var interval = setInterval(function () {
+    }
+    static start() {
+        this.propriedade = setInterval(() => {
             if (minute == 0 && second == 0) {
                 alert('descanso')
                 minute = 5
-                setTimeout(function () {
+                setTimeout(() => {
                     alert('fim do pomodoro')
                     clearInterval(interval)
                     interval = undefined
@@ -35,30 +33,38 @@ let pomodoro = {
             displai.textContent = `${minute}:${second}`
 
         }, 1000)
-    },
-    reset() {
-        clearInterval(re)
-        segundos = 0
-        minutos = 0
+
     }
+    static reset() {
+        clearInterval(this.propriedade)
+        this.propriedade = null
+        minute = 0
+        second = 0
+        displai.textContent = `${minute}:${second}`
+    }
+
 }
 
-document.querySelector('#more_time').addEventListener('click', () => { pomodoro.moreMinute })
+document.querySelector('#more_time').addEventListener('click', () => {
+    pomodoro.moreMinute()
+})
+
 document.querySelector('#less_time').addEventListener('click', () => {
     if (minute == 0) {
         alert('Ação indisponivel')
     } else {
-        pomodoro.lessMinute
+        pomodoro.lessMinute()
     }
 })
+
 document.querySelector('#start').addEventListener('click', () => {
     if (minute == 0 && second == 0) {
         alert("Minute required more when one or igual")
-    } else { pomodoro.start }
-})
-document.querySelector('#reset').addEventListener('click', () => {
-    
+    } else { pomodoro.start() }
 })
 
-  
+document.querySelector('#Reset').addEventListener('click', () => {
+    pomodoro.reset()
+})
+
 
