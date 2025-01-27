@@ -34,6 +34,7 @@ class pomodoro {
 
         }, 1000)
 
+
     }
     static reset() {
         clearInterval(this.propriedade)
@@ -63,7 +64,7 @@ document.querySelector('#start').addEventListener('click', () => {
     } else { pomodoro.start() }
 })
 
-document.querySelector('#Reset').addEventListener('click', () => {
+document.querySelector('#reset').addEventListener('click', () => {
     pomodoro.reset()
 })
 
